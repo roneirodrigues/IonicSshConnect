@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title class="y">
+      SSH
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="w">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Connections</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <strong>Do you ready to execute some commands?</strong>
+
+
+    <ion-group class="w">
+      <ion-item class="z o">
+        <ion-label position="stacked">User</ion-label>
+        <ion-input [(ngModel)]="data.inputUser" placeholder="user"></ion-input>
+      </ion-item>
+      <ion-item class="z o">
+        <ion-label position="stacked">Password</ion-label>
+        <ion-input [(ngModel)]="data.inputPassword" placeholder="******" type="password"></ion-input>
+      </ion-item>
+      <ion-item class="z o">
+        <ion-label position="stacked">Server</ion-label>
+        <ion-input [(ngModel)]="data.inputServer" placeholder="0.0.0.0"></ion-input>
+      </ion-item>
+
+      <ion-item class="z o">
+        <ion-label position="stacked">Comand</ion-label>
+        <ion-input clearInput autocomplete="on" [(ngModel)]="data.inputCommand" placeholder="ls -l" type="text">
+        </ion-input>
+      </ion-item>
+      <ion-select slot="end" interface="popover" (ionChange)="historyF($event)" [selectedText]="nameOptions">
+        <ion-select-option *ngFor="let his of history " [value]="his">
+          {{his.detalhe}}
+        </ion-select-option>
+      </ion-select>
+    </ion-group>
+
+    <ion-button class="x" (click)="onClick()" expand="block" color="danger"
+      [disabled]="!data.inputUser || !data.inputPassword || !data.inputServer|| !data.inputCommand">
+      Execute
+    </ion-button>
+
+    <ion-button class="i x" (click)="onClickClear()" expand="block">
+      Clear
+    </ion-button>
+    <br>
+
+    <ion-item text-wrap class="z" *ngFor="let item of detalhes">
+      <ion-label class="ion-text-wrap">
+        <ion-text>
+          <h5 style="color: #fff; font-weight: bold;">Status</h5>
+        </ion-text>
+        <p style="color: #fff;">{{item.det}}</p>
+      </ion-label>
+    </ion-item>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div style="text-align: center; color: #fff;">
+    <small>Copyright © 2020 RSR.</small>
+  </div>
+</ion-footer>

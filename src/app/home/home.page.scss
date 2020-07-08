@@ -1,0 +1,38 @@
+#container {
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+.x {
+  text-transform: none;
+}
+
+.y {
+  text-align: center;
+  --background: red;
+}
+
+.w {
+  --background: rgb(114, 34, 34);
+  background: rgb(114, 34, 34);
+}
+
+.o {
+  border-radius: 7px;
+  margin:5px auto;
+
+}
+.z {
+  --background: #e47e8b; 
+ }
+
+ .i{
+   
+   --background: #a03a48;
+ }

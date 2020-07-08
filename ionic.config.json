@@ -1,0 +1,7 @@
+{
+  "name": "sshconnect",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
